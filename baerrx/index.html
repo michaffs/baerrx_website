@@ -36,22 +36,25 @@
         pointer-events: none;
       }
 
-      /* --- HIER STARTET DEIN CODE --- */
+      /* --- START: FINALES, FUNKTIONIERENDES CSS --- */
 
-      /* Allgemeiner Stil für die Boxen */
+      /* 1. Der Stil für die äußere Box. Gilt für ALLE. */
       .skill-tag {
         display: inline-block;
+        vertical-align: middle;
         padding: 12px 20px;
         border-radius: 8px;
-        background-color: #2a2a2e;
+        background-color: #2a2a2e; /* Hintergrund der Box */
         font-weight: bold;
         text-decoration: none;
-        color: white; /* Fallback-Farbe */
         font-size: 16px;
+        /* Wichtig: Verhindert, dass der innere Text-Effekt "überläuft" */
+        overflow: hidden;
       }
 
-      /* Allgemeiner Glanz-Effekt mit der LILA Standardfarbe */
-      .skill-tag.shiny {
+      /* 2. LILA Glanz-Effekt (nur für den inneren Text) */
+      .shiny-text-purple {
+        display: inline-block; /* Notwendig für die Animation */
         background: linear-gradient(90deg, #9c27b0, #673ab7, #9c27b0);
         background-size: 200% 100%;
         -webkit-background-clip: text;
@@ -60,13 +63,18 @@
         animation: shine-text 3s linear infinite;
       }
 
-      /* Spezielle GOLD-Farbe, die die lila Farbe überschreibt */
-      .skill-tag.shiny.gold {
+      /* 3. GOLD Glanz-Effekt (nur für den inneren Text) */
+      .shiny-text-gold {
+        display: inline-block; /* Notwendig für die Animation */
         background: linear-gradient(90deg, #ffb56b, #ffa500, #ffb56b);
-        background-size: 200% 100%; /* Wichtig, dies zu wiederholen */
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine-text 3s linear infinite;
       }
 
-      /* Die Animation selbst (bleibt für beide gleich) */
+      /* 4. Die Animation selbst (unverändert) */
       @keyframes shine-text {
         0% {
           background-position: -200% center;
@@ -76,7 +84,7 @@
         }
       }
 
-      /* --- ENDE DEINES CODES --- */
+      /* --- ENDE: FINALES CSS --- */
 
       /* General Styles */
       .skill-tag.shiny-text:hover {
@@ -496,26 +504,28 @@
         </div>
       </section>
 
-      <!-- Skills/Interests Section -->
       <section class="skills-section">
         <h2 class="section-title">⭐ Interessen</h2>
         <div class="skills-grid">
-          <!-- Die normalen, lila-glänzenden Tags -->
-          <span class="skill-tag shiny">🎮 Gaming</span>
-          <span class="skill-tag shiny">📱 Social Media</span>
-          <span class="skill-tag shiny">🎵 Musik</span>
-          <a
-            href="http://nurfleisch.com/"
-            target="_blank"
-            class="skill-tag shiny"
-            >🍕 Essen</a
-          >
+          <span class="skill-tag">
+            <span class="shiny-text-purple">🎮 Gaming</span>
+          </span>
+          <span class="skill-tag">
+            <span class="shiny-text-purple">📱 Social Media</span>
+          </span>
+          <span class="skill-tag">
+            <span class="shiny-text-purple">🎵 Musik</span>
+          </span>
+          <a href="http://nurfleisch.com/" target="_blank" class="skill-tag">
+            <span class="shiny-text-purple">🍕 Essen</span>
+          </a>
 
-          <!-- Der besondere, gold-glänzende Tag -->
-          <span class="skill-tag shiny gold">🐦‍🔥 Shiny Hunting</span>
+          <span class="skill-tag">
+            <span class="shiny-text-gold">🐦‍🔥 Shiny Hunting</span>
+          </span>
         </div>
       </section>
-      <!-- Contact Section -->
+
       <section class="contact-section">
         <h2 class="section-title">📫 Kontakt</h2>
         <p style="margin-bottom: 2rem; opacity: 0.8">
@@ -527,7 +537,6 @@
         >
       </section>
 
-      <!-- Footer -->
       <footer class="footer">
         <p>
           <a
@@ -547,7 +556,6 @@
     </div>
 
     <script>
-      // Smooth scrolling for anchor links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
@@ -557,7 +565,6 @@
         });
       });
 
-      // Add random ghost particles
       function createGhostParticle() {
         const particle = document.createElement("div");
         particle.className = "ghost-particle";
@@ -566,13 +573,11 @@
         particle.style.animationDelay = Math.random() * 6 + "s";
         document.body.appendChild(particle);
 
-        // Remove particle after animation
         setTimeout(() => {
           particle.remove();
         }, 6000);
       }
 
-      // Create new particles periodically
       setInterval(createGhostParticle, 3000);
 
       // Add click effect to social cards
