@@ -35,58 +35,34 @@
         animation: float 6s ease-in-out infinite;
         pointer-events: none;
       }
-
-      /* Shiny Text Effect für Shiny Hunting */
-      .skill-tag.shiny-text {
-        background: linear-gradient(45deg, #9c27b0, #673ab7);
-        position: relative;
-        overflow: hidden;
+      /* Allgemeiner Stil für die Boxen */
+      .skill-tag {
+        display: inline-block;
+        padding: 10px 15px;
+        border-radius: 8px;
+        background-color: #2a2a2e; /* Optional: Dunkler Hintergrund für Kontrast */
+        font-weight: bold;
+        text-decoration: none;
+        color: white; /* Fallback-Farbe */
       }
 
-      .skill-tag.shiny-text span {
-        background: linear-gradient(
-          90deg,
-          #ffd700,
-          #fff8dc,
-          #ffffff,
-          #fff8dc,
-          #ffd700
-        );
+      /* Allgemeiner Glanz-Effekt mit der LILA Standardfarbe */
+      .skill-tag.shiny {
+        background: linear-gradient(90deg, #9c27b0, #673ab7, #9c27b0);
         background-size: 200% 100%;
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
         animation: shine-text 3s linear infinite;
-        font-weight: bold;
       }
 
-      @keyframes shine-text {
-        0% {
-          background-position: -200% center;
-        }
-        100% {
-          background-position: 200% center;
-        }
+      /* Spezielle GOLD-Farbe, die die lila Farbe überschreibt */
+      .skill-tag.shiny.gold {
+        background: linear-gradient(90deg, #ffb56b, #ffa500, #ffb56b);
+        background-size: 200% 100%; /* Wichtig, dies zu wiederholen */
       }
 
-      /* Shiny Text Effect */
-
-      .skill-tags.shiny-text {
-        background: linear-gradient(45deg, #9c27b0, #673ab7);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .skill-tag.shiny-text span {
-        background: linear-gradient(90deg, #9c27b0, #673ab7);
-        background-size: 200% 100%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: shine-text 3s linear infinite;
-        font-weight: bold;
-      }
-
+      /* Die Animation selbst (bleibt für beide gleich) */
       @keyframes shine-text {
         0% {
           background-position: -200% center;
@@ -518,21 +494,21 @@
       <section class="skills-section">
         <h2 class="section-title">⭐ Interessen</h2>
         <div class="skills-grid">
-          <span class="skill-tags shiny-text">🎮 Gaming</span>
-          <span class="skill-tags shiny-text">📱 Social Media</span>
-          <span class="skill-tags shiny-text">🎵 Musik</span>
+          <!-- Die normalen, lila-glänzenden Tags -->
+          <span class="skill-tag shiny">🎮 Gaming</span>
+          <span class="skill-tag shiny">📱 Social Media</span>
+          <span class="skill-tag shiny">🎵 Musik</span>
           <a
             href="http://nurfleisch.com/"
             target="_blank"
-            class="skill-tags shiny-text"
+            class="skill-tag shiny"
             >🍕 Essen</a
           >
-          <span class="skill-tag shiny-text"
-            ><span>🐦‍🔥 Shiny Hunting</span></span
-          >
+
+          <!-- Der besondere, gold-glänzende Tag -->
+          <span class="skill-tag shiny gold">🐦‍🔥 Shiny Hunting</span>
         </div>
       </section>
-
       <!-- Contact Section -->
       <section class="contact-section">
         <h2 class="section-title">📫 Kontakt</h2>
