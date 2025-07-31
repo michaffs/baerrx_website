@@ -10,7 +10,6 @@
         padding: 0;
         box-sizing: border-box;
       }
-
       body {
         background: linear-gradient(
           135deg,
@@ -24,7 +23,6 @@
         position: relative;
         overflow-x: hidden;
       }
-
       /* Floating ghost particles */
       .ghost-particle {
         position: absolute;
@@ -35,75 +33,17 @@
         animation: float 6s ease-in-out infinite;
         pointer-events: none;
       }
-
-      /* --- START: FINALES, FUNKTIONIERENDES CSS --- */
-
-      /* 1. Der Stil für die äußere Box. Gilt für ALLE. */
-      .skill-tag {
-        display: inline-block;
-        vertical-align: middle;
-        padding: 12px 20px;
-        border-radius: 8px;
-        background-color: #2a2a2e; /* Hintergrund der Box */
-        font-weight: bold;
-        text-decoration: none;
-        font-size: 16px;
-        /* Wichtig: Verhindert, dass der innere Text-Effekt "überläuft" */
-        overflow: hidden;
-      }
-
-      /* 2. LILA Glanz-Effekt (nur für den inneren Text) */
-      .shiny-text-purple {
-        display: inline-block; /* Notwendig für die Animation */
-        background: linear-gradient(90deg, #9c27b0, #673ab7, #9c27b0);
-        background-size: 200% 100%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: shine-text 3s linear infinite;
-      }
-
-      /* 3. GOLD Glanz-Effekt (nur für den inneren Text) */
-      .shiny-text-gold {
-        display: inline-block; /* Notwendig für die Animation */
-        background: linear-gradient(90deg, #ffb56b, #ffa500, #ffb56b);
-        background-size: 200% 100%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: shine-text 3s linear infinite;
-      }
-
-      /* 4. Die Animation selbst (unverändert) */
-      @keyframes shine-text {
-        0% {
-          background-position: -200% center;
-        }
-        100% {
-          background-position: 200% center;
-        }
-      }
-
-      /* --- ENDE: FINALES CSS --- */
-
-      /* General Styles */
-      .skill-tag.shiny-text:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
-      }
       @keyframes float {
         0%,
         100% {
           transform: translateY(0px) rotate(0deg);
           opacity: 0.3;
         }
-
         50% {
           transform: translateY(-30px) rotate(180deg);
           opacity: 0.8;
         }
       }
-
       .container {
         max-width: 1000px;
         margin: 0 auto;
@@ -111,7 +51,6 @@
         position: relative;
         z-index: 10;
       }
-
       /* Hero Section */
       .hero {
         text-align: center;
@@ -123,7 +62,6 @@
         box-shadow: 0 0 50px rgba(233, 30, 99, 0.4);
         backdrop-filter: blur(15px);
       }
-
       .profile-image {
         width: 200px;
         height: 200px;
@@ -134,12 +72,10 @@
         object-fit: cover;
         transition: all 0.3s ease;
       }
-
       .profile-image:hover {
         transform: scale(1.05);
         box-shadow: 0 0 40px rgba(233, 30, 99, 0.8);
       }
-
       .name {
         font-size: 3.5rem;
         margin-bottom: 1rem;
@@ -147,14 +83,12 @@
         background: linear-gradient(45deg, #e91e63, #9c27b0);
         background-clip: text;
       }
-
       .title {
         font-size: 1.5rem;
         margin-bottom: 1.5rem;
         opacity: 0.9;
         color: #f8bbd9;
       }
-
       .bio {
         font-size: 1.1rem;
         line-height: 1.6;
@@ -162,8 +96,6 @@
         margin: 0 auto;
         opacity: 0.8;
       }
-
-      /* Simple Twitch Link */
       .simple-link {
         color: #e91e63;
         text-decoration: none;
@@ -174,18 +106,15 @@
         transition: all 0.3s ease;
         text-shadow: 0 0 10px rgba(233, 30, 99, 0.5);
       }
-
       .simple-link:hover {
         color: #f06292;
         transform: translateY(-2px);
         text-shadow: 0 0 15px rgba(233, 30, 99, 0.8);
       }
-
       /* Social Media Grid */
       .social-section {
         margin-bottom: 4rem;
       }
-
       .section-title {
         text-align: center;
         font-size: 2.5rem;
@@ -194,13 +123,11 @@
         background: linear-gradient(45deg, #e91e63, #9c27b0);
         background-clip: text;
       }
-
       .social-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 2rem;
       }
-
       .social-card {
         background: rgba(0, 0, 0, 0.4);
         border-radius: 20px;
@@ -214,7 +141,6 @@
         color: inherit;
         display: block;
       }
-
       .social-card::before {
         content: "";
         position: absolute;
@@ -232,35 +158,29 @@
         transition: all 0.5s ease;
         opacity: 0;
       }
-
       .social-card:hover::before {
         opacity: 1;
         animation: shimmer 1.5s ease-in-out;
       }
-
       @keyframes shimmer {
         0% {
           transform: translateX(-100%) translateY(-100%) rotate(45deg);
         }
-
         100% {
           transform: translateX(100%) translateY(100%) rotate(45deg);
         }
       }
-
       .social-card:hover {
         transform: translateY(-10px);
         border-color: #e91e63;
         box-shadow: 0 15px 35px rgba(233, 30, 99, 0.4);
       }
-
       .social-icon {
         font-size: 3rem;
         margin-bottom: 1rem;
         display: block;
         text-align: center;
       }
-
       .social-name {
         font-size: 1.3rem;
         font-weight: bold;
@@ -268,33 +188,29 @@
         color: #e91e63;
         text-align: center;
       }
-
       .social-handle {
         font-size: 1rem;
         opacity: 0.8;
         text-align: center;
         color: #f8bbd9;
       }
-
       .social-stats {
         margin-top: 1rem;
         text-align: center;
         font-size: 0.9rem;
         opacity: 0.7;
       }
-
       /* Skills/Interests Section */
       .skills-section {
         margin-bottom: 4rem;
       }
-
       .skills-grid {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
         justify-content: center;
       }
-
+      /* BEGIN GLOW STYLES */
       .skill-tag {
         background: linear-gradient(45deg, #9c27b0, #673ab7);
         color: white;
@@ -306,14 +222,45 @@
         transition: all 0.3s ease;
         text-decoration: none;
         display: inline-block;
+        /* Purple Glow for first four */
+        box-shadow: 0 0 7px 3px #a47ae2cc, 0 0 25px 8px #7b1fa2aa,
+          0 0 60px 14px #651fff33;
       }
-
+      /* Genau nur für die fünfte: Noch mehr goldener Glow */
+      .skill-tag:last-child {
+        background: linear-gradient(45deg, #ffd700 25%, #ffb56b 75%);
+        box-shadow: 0 0 15px 5px #ffe066cc, 0 0 40px 10px #ffb300aa,
+          0 0 95px 22px #fff7ae33;
+      }
       .skill-tag:hover {
-        background: linear-gradient(45deg, #e91e63, #f06292);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(233, 30, 99, 0.4);
+        transform: translateY(-3px) scale(1.05);
       }
-
+      .shiny-text-purple {
+        display: inline-block;
+        background: linear-gradient(90deg, #9c27b0, #673ab7, #9c27b0);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine-text 3s linear infinite;
+      }
+      .shiny-text-gold {
+        display: inline-block;
+        background: linear-gradient(90deg, #ffb56b, #ffa500, #ffb56b);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine-text 3s linear infinite;
+      }
+      @keyframes shine-text {
+        0% {
+          background-position: -200% center;
+        }
+        100% {
+          background-position: 200% center;
+        }
+      }
       /* Contact Section */
       .contact-section {
         text-align: center;
@@ -323,7 +270,6 @@
         border: 2px solid rgba(233, 30, 99, 0.5);
         backdrop-filter: blur(10px);
       }
-
       .contact-button {
         background: linear-gradient(45deg, #e91e63, #9c27b0);
         color: white;
@@ -337,37 +283,30 @@
         margin: 0.5rem;
         border: 2px solid transparent;
       }
-
       .contact-button:hover {
         background: linear-gradient(45deg, #f06292, #ba68c8);
         transform: translateY(-3px);
         box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
       }
-
       /* Responsive Design */
       @media (max-width: 768px) {
         .container {
           padding: 1rem;
         }
-
         .name {
           font-size: 2.5rem;
         }
-
         .social-grid {
           grid-template-columns: 1fr;
         }
-
         .profile-image {
           width: 150px;
           height: 150px;
         }
-
         .hero {
           padding: 2rem 1rem;
         }
       }
-
       /* Footer */
       .footer {
         text-align: center;
@@ -378,7 +317,6 @@
       }
     </style>
   </head>
-
   <body>
     <!-- Floating ghost particles -->
     <div
@@ -419,14 +357,12 @@
           👋 Jo Moin Chefs! Ich bin der dicke Junge aus der Nachbarschaft –
           nennt mich einfach Baerrx oder Leon. 😎
         </p>
-
         <a
           href="https://konect.gg/baerrx/gears"
           target="_blank"
           class="simple-link"
+          >🎮 Setup</a
         >
-          🎮 Setup
-        </a>
       </section>
 
       <!-- Social Media Section -->
@@ -446,7 +382,6 @@
             <div class="social-handle">Baerrx</div>
             <div class="social-stats">Live Streams</div>
           </a>
-
           <a
             href="https://www.instagram.com/Baerrx"
             target="_blank"
@@ -457,7 +392,6 @@
             <div class="social-handle">@Baerrx</div>
             <div class="social-stats">Fotos & Stories</div>
           </a>
-
           <a
             href="https://www.youtube.com/@Baerrxx"
             target="_blank"
@@ -468,7 +402,6 @@
             <div class="social-handle">@Baerrxx</div>
             <div class="social-stats">Kurze Videos</div>
           </a>
-
           <a
             href="https://www.tiktok.com/@baerrxx"
             target="_blank"
@@ -479,7 +412,6 @@
             <div class="social-handle">@baerrxx</div>
             <div class="social-stats">Kurze Videos</div>
           </a>
-
           <a
             href="https://shinydex.com/Baerrx"
             target="_blank"
@@ -490,7 +422,6 @@
             <div class="social-handle">@Baerrxx</div>
             <div class="social-stats">Pokemon</div>
           </a>
-
           <a
             href="https://discord.com/invite/9sVRe3bKjK"
             target="_blank"
@@ -504,6 +435,7 @@
         </div>
       </section>
 
+      <!-- Skills/Interessen Section -->
       <section class="skills-section">
         <h2 class="section-title">⭐ Interessen</h2>
         <div class="skills-grid">
@@ -519,13 +451,13 @@
           <a href="http://nurfleisch.com/" target="_blank" class="skill-tag">
             <span class="shiny-text-purple">🍕 Essen</span>
           </a>
-
           <span class="skill-tag">
             <span class="shiny-text-gold">🐦‍🔥 Shiny Hunting</span>
           </span>
         </div>
       </section>
 
+      <!-- Kontakt Section -->
       <section class="contact-section">
         <h2 class="section-title">📫 Kontakt</h2>
         <p style="margin-bottom: 2rem; opacity: 0.8">
@@ -556,6 +488,7 @@
     </div>
 
     <script>
+      // Smooth scrolling
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
@@ -565,6 +498,7 @@
         });
       });
 
+      // Dynamic ghost particle generation
       function createGhostParticle() {
         const particle = document.createElement("div");
         particle.className = "ghost-particle";
@@ -573,50 +507,32 @@
         particle.style.animationDelay = Math.random() * 6 + "s";
         document.body.appendChild(particle);
 
+        // Remove particle after animation
         setTimeout(() => {
           particle.remove();
         }, 6000);
       }
 
-      setInterval(createGhostParticle, 3000);
+      // Create new particles periodically
+      setInterval(createGhostParticle, 2000);
 
-      // Add click effect to social cards
-      document.querySelectorAll(".social-card").forEach((card) => {
-        card.addEventListener("click", function (e) {
-          // Add ripple effect
-          const ripple = document.createElement("div");
-          ripple.style.cssText = `
-                    position: absolute;
-                    border-radius: 50%;
-                    background: rgba(233, 30, 99, 0.3);
-                    transform: scale(0);
-                    animation: ripple 0.6s linear;
-                    pointer-events: none;
-                `;
+      // Add hover effect to skill tags
+      const skillTags = document.querySelectorAll(".skill-tag");
+      skillTags.forEach((tag) => {
+        tag.addEventListener("mouseenter", function () {
+          this.style.boxShadow =
+            this === skillTags[skillTags.length - 1]
+              ? "0 0 25px 8px #ffe066cc, 0 0 60px 15px #ffb300aa, 0 0 120px 30px #fff7ae33"
+              : "0 0 15px 5px #a47ae2cc, 0 0 40px 12px #7b1fa2aa, 0 0 80px 20px #651fff33";
+        });
 
-          const rect = this.getBoundingClientRect();
-          const size = Math.max(rect.width, rect.height);
-          ripple.style.width = ripple.style.height = size + "px";
-          ripple.style.left = e.clientX - rect.left - size / 2 + "px";
-          ripple.style.top = e.clientY - rect.top - size / 2 + "px";
-
-          this.appendChild(ripple);
-
-          setTimeout(() => ripple.remove(), 600);
+        tag.addEventListener("mouseleave", function () {
+          this.style.boxShadow =
+            this === skillTags[skillTags.length - 1]
+              ? "0 0 15px 5px #ffe066cc, 0 0 40px 10px #ffb300aa, 0 0 95px 22px #fff7ae33"
+              : "0 0 7px 3px #a47ae2cc, 0 0 25px 8px #7b1fa2aa, 0 0 60px 14px #651fff33";
         });
       });
-
-      // Add CSS for ripple animation
-      const style = document.createElement("style");
-      style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(2);
-                    opacity: 0;
-                }
-            }
-        `;
-      document.head.appendChild(style);
     </script>
   </body>
 </html>
