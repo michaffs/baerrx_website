@@ -125,6 +125,38 @@
         transform: scale(1.05);
         box-shadow: 0 0 40px rgba(233, 30, 99, 0.8);
       }
+     
+      .kollegen-container {
+    display: flex;
+    justify-content: center; 
+    gap: 20px;          
+    flex-wrap: wrap;       
+  }
+
+  .kollegen-card-style {
+    min-width: 140px;
+    max-width: 180px;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kollegen-image-small {
+    width: 70px !important; 
+    height: 70px !important;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    border: 3px solid #e91e63;
+    box-shadow: 0 0 15px rgba(233, 30, 99, 0.6);
+    object-fit: cover;
+    transition: all 0.3s ease;
+  }
+  
+  .kollegen-card-style:hover .kollegen-image-small {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(233, 30, 99, 0.8);
+  }
 
       .name {
         font-size: 3.5rem;
@@ -509,18 +541,19 @@
           >
         </div>
       </section>
-     <section class="">
+<section class="">
   <h2 class="section-title">🤝 Kollegen</h2>
-  <div class="social-grid">
+  
+  <div class="kollegen-container">
     <a
       href="https://www.twitch.tv/hanztactics"
       target="_blank"
-      class="social-card"
+      class="social-card kollegen-card-style"
     >
       <img
         src="https://cdn.discordapp.com/attachments/949426634455400520/1454484806816501954/2926481f-5356-4e43-9a50-37bde0b120f9-profile_image-70x70.jpeg?ex=69514208&is=694ff088&hm=a6ac6c6767304370aebd1995587fe1b2f2ece344aa388d0fc921832ab475f325&"
         alt="hanztactics"
-        class="profile-image"
+        class="kollegen-image-small"
       />
       <div class="social-name">hanztactics</div>
     </a>
@@ -528,12 +561,12 @@
     <a
       href="https://www.twitch.tv/hoverodds"
       target="_blank"
-      class="social-card"
+      class="social-card kollegen-card-style"
     >
       <img
         src="https://cdn.discordapp.com/attachments/949426634455400520/1454487206755565620/1331e75d-cf3e-445f-9aa6-25dc783d81d4-profile_image-70x70.jpeg?ex=69514445&is=694ff2c5&hm=3ca971344199824ea468ea44eeb23c951e827733e03d236cddbef0fd6bb5e0df&"
         alt="hoverodds"
-        class="profile-image"
+        class="kollegen-image-small"
       />
       <div class="social-name">hoverodds</div>
     </a>
