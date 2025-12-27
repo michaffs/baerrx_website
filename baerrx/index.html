@@ -133,26 +133,30 @@
     flex-wrap: wrap;         
   }
 
-  .kollegen-card-style {
-    min-width: 140px;
-    max-width: 180px;
-    padding: 1.5rem 1rem;
-    
-    display: flex;        
-    flex-direction: column;  
-    align-items: center;   
-  }
+.kollegen-card-style {
+  min-width: 140px;
+  max-width: 180px;
+  padding: 1.5rem 1rem;
+  
+  display: flex;        
+  flex-direction: column;  
+  align-items: center;   
+  justify-content: center; 
+  text-align: center;      
+}
 
   .kollegen-image-small {
     width: 70px !important;   
     height: 70px !important;
-    border-radius: 50%;    
+    border-radius: 50%;   
     margin-bottom: 0.5rem;    
     
     border: 3px solid #e91e63;
     box-shadow: 0 0 15px rgba(233, 30, 99, 0.6);
     object-fit: cover;
     transition: all 0.3s ease;
+    margin-left: auto;
+  margin-right: auto;
   }
   
   .kollegen-card-style:hover .kollegen-image-small {
