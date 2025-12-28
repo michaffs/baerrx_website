@@ -98,6 +98,100 @@
         z-index: 10;
       }
 
+.social-card.instagram-card {
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  overflow: hidden; /* Wichtig für die Animation */
+}
+
+/* Der Standard-Zustand (Instagram Logo) */
+.insta-default {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  background: transparent;
+}
+
+/* Beim Hover verschwindet das Standard-Logo */
+.social-card.instagram-card:hover .insta-default {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+/* Container für die zwei Buttons */
+.insta-split {
+  display: flex;
+  flex-direction: column; /* WICHTIG: Untereinander statt nebeneinander */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Die einzelnen Buttons (Oben & Unten) */
+.split-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: row; /* Icon neben Text */
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Abstand zwischen Icon und Text */
+  text-decoration: none;
+  color: white;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.4);
+  
+  /* Trennlinie horizontal */
+  border-bottom: 1px solid rgba(233, 30, 99, 0.3);
+  
+  opacity: 0;
+  /* Animation kommt von oben/unten */
+  transform: translateY(10px); 
+}
+
+/* Der letzte Button braucht keinen Rand unten */
+.split-btn:last-child {
+  border-bottom: none;
+  transform: translateY(-10px); /* Der untere kommt von oben entgegen */
+}
+
+/* Hover-Status aktiv */
+.social-card.instagram-card:hover .split-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.social-card.instagram-card:hover .split-btn:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.social-card.instagram-card:hover .split-btn:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.split-btn:hover {
+  background: rgba(233, 30, 99, 0.6);
+}
+
+.split-icon {
+  font-size: 1.5rem;
+}
+
+.split-label {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
       /* Hero Section */
       .hero {
         text-align: center;
@@ -133,36 +227,36 @@
     flex-wrap: wrap;         
   }
 
-.kollegen-card-style {
-  min-width: 140px;
-  max-width: 180px;
-  padding: 1.5rem 1rem;
-  
-  display: flex;        
-  flex-direction: column;  
-  align-items: center;   
-  justify-content: center; 
-  text-align: center;      
-}
+    .kollegen-card-style {
+      min-width: 140px;
+      max-width: 180px;
+      padding: 1.5rem 1rem;
 
-  .kollegen-image-small {
-    width: 70px !important;   
-    height: 70px !important;
-    border-radius: 50%;   
-    margin-bottom: 0.5rem;    
-    
-    border: 3px solid #e91e63;
-    box-shadow: 0 0 15px rgba(233, 30, 99, 0.6);
-    object-fit: cover;
-    transition: all 0.3s ease;
-    margin-left: auto;
-  margin-right: auto;
-  }
-  
-  .kollegen-card-style:hover .kollegen-image-small {
-      transform: scale(1.1);
-      box-shadow: 0 0 25px rgba(233, 30, 99, 0.8);
-  }
+      display: flex;        
+      flex-direction: column;  
+      align-items: center;   
+      justify-content: center; 
+      text-align: center;      
+    }
+
+      .kollegen-image-small {
+        width: 70px !important;   
+        height: 70px !important;
+        border-radius: 50%;   
+        margin-bottom: 0.5rem;    
+
+        border: 3px solid #e91e63;
+        box-shadow: 0 0 15px rgba(233, 30, 99, 0.6);
+        object-fit: cover;
+        transition: all 0.3s ease;
+        margin-left: auto;
+      margin-right: auto;
+      }
+
+      .kollegen-card-style:hover .kollegen-image-small {
+          transform: scale(1.1);
+          box-shadow: 0 0 25px rgba(233, 30, 99, 0.8);
+      }
 
       .name {
         font-size: 3.5rem;
@@ -472,16 +566,24 @@
             <div class="social-stats">Live Streams</div>
           </a>
 
-          <a
-            href="https://www.instagram.com/Baerrx"
-            target="_blank"
-            class="social-card"
-          >
-            <div class="social-icon">📸</div>
-            <div class="social-name">Instagram</div>
-            <div class="social-handle">@Baerrx</div>
-            <div class="social-stats">Fotos & Stories</div>
-          </a>
+         <div class="social-card instagram-card">
+  <div class="insta-default">
+    <div class="social-icon">📸</div>
+    <div class="social-name">Instagram</div>
+  </div>
+
+  <div class="insta-split">
+    <a href="https://www.instagram.com/Baerrx" target="_blank" class="split-btn">
+      <span class="split-icon">👨‍💻</span>
+      <span class="split-label">Baerrx</span>
+    </a>
+    
+    <a href="https://www.instagram.com/baerrxtcg" target="_blank" class="split-btn">
+      <span class="split-icon">🃏</span>
+      <span class="split-label">TCG</span>
+    </a>
+  </div>
+</div>
 
           <a
             href="https://www.youtube.com/@Baerrxx"
