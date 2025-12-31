@@ -64,16 +64,32 @@
         backdrop-filter: blur(15px);
       }
 
-      .profile-image {
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        margin: 0 auto 2rem auto;
-        border: 4px solid #e91e63;
-        box-shadow: 0 0 30px rgba(233, 30, 99, 0.6);
-        object-fit: cover;
-        transition: all 0.3s ease;
-      }
+      /* Der runde Rahmen (schneidet Überstehendes ab) */
+.profile-frame {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 0 auto 2rem auto;
+  border: 4px solid #e91e63;
+  box-shadow: 0 0 30px rgba(233, 30, 99, 0.6);
+  overflow: hidden;             /* Wichtig für den "Schnitt" */
+  position: relative;
+}
+
+/* Das Bild darin (wird vergrößert) */
+.profile-img-zoomed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.3);        /* HIER ÄNDERN: 1.3 = 30% Zoom */
+  transform-origin: center 40%; /* Verschiebt den Fokus etwas nach oben zum Gesicht */
+  transition: transform 0.3s ease;
+}
+
+/* Optional: Zoomt noch mehr beim Drüberfahren */
+.profile-frame:hover .profile-img-zoomed {
+  transform: scale(1.4);
+}
 
       .profile-image:hover {
         transform: scale(1.05);
@@ -415,26 +431,29 @@
     <div class="ghost-particle" style="top: 70%; left: 5%; animation-delay: 5s"></div>
 
     <div class="container">
-      <section class="hero">
-        <img
-  src="images/noBGfavicon.png"
-  alt="Baerrx"
-  class="profile-image"
-/>
-        <h1 class="name">👻 Baerrx</h1>
-        <p class="title">
-          👋 Jo Moin Chefs! Ich bin der dicke Junge aus der Nachbarschaft –
-          nennt mich einfach Baerrx oder Leon. 😎
-        </p>
+    <section class="hero">
+  <div class="profile-frame">
+    <img
+      src="images/noBGfavicon.png"
+      alt="Baerrx"
+      class="profile-img-zoomed"
+    />
+  </div>
 
-        <a
-          href="https://konect.gg/baerrx/gears"
-          target="_blank"
-          class="simple-link"
-        >
-          🎮 Setup
-        </a>
-      </section>
+  <h1 class="name">👻 Baerrx</h1>
+  <p class="title">
+    👋 Jo Moin Chefs! Ich bin der dicke Junge aus der Nachbarschaft –
+    nennt mich einfach Baerrx oder Leon. 😎
+  </p>
+
+  <a
+    href="https://konect.gg/baerrx/gears"
+    target="_blank"
+    class="simple-link"
+  >
+    🎮 Setup
+  </a>
+</section>
 
       <section class="social-section">
         <h2 class="section-title">
